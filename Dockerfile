@@ -1,11 +1,19 @@
-FROM golang:alpine3.6 AS binary
+FROM 1.8.5-alpine3.5
+
+RUN mkdir /app
+
 ADD . /app
+
 WORKDIR /app
+
 RUN go build -o multi-context
 
-FROM alpine:3.6
 WORKDIR /app
+
 ENV PORT 8000
+
 EXPOSE 8000
+
 COPY --from=binary /app/multi-context /app
+
 CMD ["/app/multi-context"]
