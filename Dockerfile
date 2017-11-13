@@ -10,9 +10,9 @@ RUN go build -o multi-context
 
 WORKDIR /app
 
-ENV PORT 8001
+ENV PORT 8081
 
-EXPOSE 8001
+EXPOSE 8081
 
 COPY --from=binary /app/multi-context /app
 
