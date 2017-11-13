@@ -25,17 +25,17 @@ func main() {
     
     http.HandleFunc("/App1", func(w http.ResponseWriter, r *http.Request){
         fmt.Fprintf(w, "Hi, this is App 1 on %s\n", hostname)
-        fmt.Fprintf(os.Stdout, "Got a request for this app: %s\n", hostname)
+        fmt.Fprintf(os.Stdout, "Got a request for App 1: %s\n", hostname)
     })
     
     http.HandleFunc("/App2", func(w http.ResponseWriter, r *http.Request){
         fmt.Fprintf(w, "Hi, this is App 2 on %s\n", hostname)
-        fmt.Fprintf(os.Stdout, "Got a request for this app: %s\n", hostname)
+        fmt.Fprintf(os.Stdout, "Got a request for App 2: %s\n", hostname)
     })
     
     http.HandleFunc("/App3", func(w http.ResponseWriter, r *http.Request){
         fmt.Fprintf(w, "Hi, this is App 3 on %s\n", hostname)
-        fmt.Fprintf(os.Stdout, "Got a request for this app: %s\n", hostname)
+        fmt.Fprintf(os.Stdout, "Got a request for this App 3: %s\n", hostname)
     })
 
     log.Fatal(http.ListenAndServe(":" + port, nil))
