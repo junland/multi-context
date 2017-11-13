@@ -16,4 +16,4 @@ EXPOSE 8081
 
 COPY --from=binary /app/multi-context /app
 
-CMD ["/app/multi-context"]
+CMD ["./app/multi-context"]
