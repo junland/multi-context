@@ -14,6 +14,4 @@ ENV PORT 8081
 
 EXPOSE 8081
 
-COPY --from=binary /app/multi-context /app
-
-CMD ["./app/multi-context"]
+ENTRYPOINT /app/multi-context
